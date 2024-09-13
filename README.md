@@ -1,13 +1,18 @@
 # job_data_2023
 
+## Getting the Data
+
+```
+$ export SLURM_TIME_FORMAT="%s"
+$ sacct -M traverse -a -X -P -S 2023-01-01T00:00:00 -E 2023-12-31T23:59:59 -o cluster,start,end,elapsedraw,timelimitraw,ncpus,nnodes,cputimeraw,alloctres,nodelist,admincomment > traverse.2023
+```
+
 
 ## Compute Node Specifications
 
-```
-$ sacct -M traverse -a -X -P -n -S 2023-01-01T00:00:00 -E 2023-12-31T23:59:59 -o user,cluster,start,end,ncpus,nnodes,alloctres,nodelist
-```
-
 #### Traverse
+
+Traverse is composed on 46 compute nodes.
 
 CPU:
 
@@ -37,11 +42,13 @@ NUMA node254 CPU(s):
 NUMA node255 CPU(s): 
 ```
 
-Note that there are 4 hardware threads per CPU-core. Each node has 2 sockets with 16 CPU-cores per sockets giving 128 hardware threads. Several codes run optimally using on 1 hardware thread per CPU-core.
+There are 4 hardware threads per CPU-core. Each node has 2 sockets with 16 CPU-cores per sockets giving 128 hardware threads. Several codes run optimally using on 1 hardware thread per CPU-core.
 
 Total CPU memory per node is 250 GB.
 
 GPU:
+
+There are four GPUs per node. Name and model:
 
 ```
 Tesla V100-SXM2-32GB
