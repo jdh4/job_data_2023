@@ -1,3 +1,4 @@
+```
 NODELIST        PART    STATE        FREE/TOTAL CPUs  CPU_LOAD  AVAIL/TOTAL MEMORY  FREE/TOTAL GPUs         FEATURES
 stellar-bigmem  bigmem  idle                 128/128      0.02   4000000/4000000MB                   amd,rome,bigmem
 stellar-i01n1   serial  allocated               0/96     98.31      40000/760000MB                     cascade,intel
@@ -490,4 +491,4 @@ stellar-m09n18  all     idle                   96/96      0.00     760000/760000
 stellar-m09n19  all     idle                   96/96      0.00     760000/760000MB                     cascade,intel
 stellar-m09n20  all     idle                   96/96      0.00     760000/760000MB                     cascade,intel
 stellar-m09n21  all     idle                   96/96      0.00     760000/760000MB                     cascade,intel
-
+```
