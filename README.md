@@ -296,50 +296,50 @@ Details about the P100 GPU on Tiger:
 CPUs on the H100 nodes:
 
 ```
+jdh4@della-k18g3:~$ lscpu
 Architecture:        x86_64
 CPU op-mode(s):      32-bit, 64-bit
 Byte Order:          Little Endian
-CPU(s):              48
-On-line CPU(s) list: 0-47
+CPU(s):              96
+On-line CPU(s) list: 0-95
 Thread(s) per core:  1
-Core(s) per socket:  24
+Core(s) per socket:  48
 Socket(s):           2
 NUMA node(s):        2
 Vendor ID:           GenuineIntel
 CPU family:          6
-Model:               106
-Model name:          Intel(R) Xeon(R) Gold 6342 CPU @ 2.80GHz
-Stepping:            6
-CPU MHz:             3500.000
-CPU max MHz:         3500.0000
+Model:               143
+Model name:          Intel(R) Xeon(R) Platinum 8468
+Stepping:            8
+CPU MHz:             2100.000
+CPU max MHz:         3800.0000
 CPU min MHz:         800.0000
-BogoMIPS:            5600.00
-Virtualization:      VT-x
+BogoMIPS:            4200.00
 L1d cache:           48K
 L1i cache:           32K
-L2 cache:            1280K
-L3 cache:            36864K
-NUMA node0 CPU(s):   0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46
-NUMA node1 CPU(s):   1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47
-Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 invpcid_single intel_ppin ssbd mba ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid cqm rdt_a avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb intel_pt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local split_lock_detect wbnoinvd dtherm ida arat pln pts avx512vbmi umip pku ospke avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg tme avx512_vpopcntdq la57 rdpid fsrm md_clear pconfig flush_l1d arch_capabilities
+L2 cache:            2048K
+L3 cache:            107520K
+NUMA node0 CPU(s):   0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70,72,74,76,78,80,82,84,86,88,90,92,94
+NUMA node1 CPU(s):   1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79,81,83,85,87,89,91,93,95
+Flags:               fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb cat_l3 cat_l2 cdp_l3 invpcid_single cdp_l2 ssbd mba ibrs ibpb stibp ibrs_enhanced fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid cqm rdt_a avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb intel_pt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local split_lock_detect avx_vnni avx512_bf16 wbnoinvd dtherm ida arat pln pts hwp hwp_act_window hwp_epp hwp_pkg_req avx512vbmi umip pku ospke waitpkg avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg tme avx512_vpopcntdq la57 rdpid bus_lock_detect cldemote movdiri movdir64b enqcmd fsrm md_clear serialize tsxldtrk pconfig arch_lbr amx_bf16 avx512_fp16 amx_tile amx_int8 flush_l1d arch_capabilities
 ```
 
 GPU on the H100 nodes (8 GPUs per node):
 
 ```
-jdh4@della-l04g2:~$ nvidia-smi -a
+jdh4@della-k18g3:~$ nvidia-smi -a
 
 ==============NVSMI LOG==============
 
-Timestamp                                 : Wed Sep 18 11:05:55 2024
+Timestamp                                 : Thu Sep 26 14:13:55 2024
 Driver Version                            : 560.35.03
 CUDA Version                              : 12.6
 
 Attached GPUs                             : 1
-GPU 00000000:CA:00.0
-    Product Name                          : NVIDIA A100 80GB PCIe
+GPU 00000000:DB:00.0
+    Product Name                          : NVIDIA H100 80GB HBM3
     Product Brand                         : NVIDIA
-    Product Architecture                  : Ampere
+    Product Architecture                  : Hopper
     Display Mode                          : Enabled
     Display Active                        : Disabled
     Persistence Mode                      : Enabled
@@ -352,28 +352,28 @@ GPU 00000000:CA:00.0
     Driver Model
         Current                           : N/A
         Pending                           : N/A
-    Serial Number                         : 1323222009361
-    GPU UUID                              : GPU-fc2491aa-a5a2-0df6-6ba1-339949de3495
-    Minor Number                          : 2
-    VBIOS Version                         : 92.00.90.00.0F
+    Serial Number                         : 1650124008279
+    GPU UUID                              : GPU-f7b02328-d6fe-5b1f-9683-15041689bb03
+    Minor Number                          : 7
+    VBIOS Version                         : 96.00.A5.00.01
     MultiGPU Board                        : No
-    Board ID                              : 0xca00
-    Board Part Number                     : 900-21001-0120-130
-    GPU Part Number                       : 20B5-893-A1
+    Board ID                              : 0xdb00
+    Board Part Number                     : 692-2G520-0200-000
+    GPU Part Number                       : 2330-885-A1
     FRU Part Number                       : N/A
-    Module ID                             : 1
+    Module ID                             : 8
     Inforom Version
-        Image Version                     : 1001.0230.00.03
-        OEM Object                        : 2.0
-        ECC Object                        : 6.16
+        Image Version                     : G520.0200.00.05
+        OEM Object                        : 2.1
+        ECC Object                        : 7.16
         Power Management Object           : N/A
     Inforom BBX Object Flush
-        Latest Timestamp                  : N/A
-        Latest Duration                   : N/A
+        Latest Timestamp                  : 2024/09/26 04:50:04.817
+        Latest Duration                   : 92672 us
     GPU Operation Mode
         Current                           : N/A
         Pending                           : N/A
-    GPU C2C Mode                          : N/A
+    GPU C2C Mode                          : Disabled
     GPU Virtualization Mode
         Virtualization Mode               : None
         Host VGPU Mode                    : N/A
@@ -385,33 +385,33 @@ GPU 00000000:CA:00.0
     IBMNPU
         Relaxed Ordering Mode             : N/A
     PCI
-        Bus                               : 0xCA
+        Bus                               : 0xDB
         Device                            : 0x00
         Domain                            : 0x0000
         Base Classcode                    : 0x3
         Sub Classcode                     : 0x2
-        Device Id                         : 0x20B510DE
-        Bus Id                            : 00000000:CA:00.0
-        Sub System Id                     : 0x153310DE
+        Device Id                         : 0x233010DE
+        Bus Id                            : 00000000:DB:00.0
+        Sub System Id                     : 0x16C110DE
         GPU Link Info
             PCIe Generation
-                Max                       : 4
-                Current                   : 4
-                Device Current            : 4
-                Device Max                : 4
-                Host Max                  : 4
+                Max                       : 5
+                Current                   : 5
+                Device Current            : 5
+                Device Max                : 5
+                Host Max                  : 5
             Link Width
                 Max                       : 16x
                 Current                   : 16x
         Bridge Chip
             Type                          : N/A
             Firmware                      : N/A
-        Replays Since Reset               : 0
+        Replays Since Reset               : 6
         Replay Number Rollovers           : 0
-        Tx Throughput                     : 0 KB/s
-        Rx Throughput                     : 0 KB/s
-        Atomic Caps Outbound              : N/A
-        Atomic Caps Inbound               : N/A
+        Tx Throughput                     : 650 KB/s
+        Rx Throughput                     : 606 KB/s
+        Atomic Caps Outbound              : FETCHADD_32 FETCHADD_64 SWAP_32 SWAP_64 CAS_32 CAS_64 
+        Atomic Caps Inbound               : FETCHADD_32 FETCHADD_64 SWAP_32 SWAP_64 CAS_32 CAS_64 
     Fan Speed                             : N/A
     Performance State                     : P0
     Clocks Event Reasons
@@ -424,12 +424,12 @@ GPU 00000000:CA:00.0
         Sync Boost                        : Not Active
         SW Thermal Slowdown               : Not Active
         Display Clock Setting             : Not Active
-    Sparse Operation Mode                 : N/A
+    Sparse Operation Mode                 : Disabled
     FB Memory Usage
-        Total                             : 81920 MiB
-        Reserved                          : 765 MiB
+        Total                             : 81559 MiB
+        Reserved                          : 450 MiB
         Used                              : 1 MiB
-        Free                              : 81156 MiB
+        Free                              : 81110 MiB
     BAR1 Memory Usage
         Total                             : 131072 MiB
         Used                              : 1 MiB
@@ -487,29 +487,29 @@ GPU 00000000:CA:00.0
         Pending                           : No
         Remapping Failure Occurred        : No
         Bank Remap Availability Histogram
-            Max                           : 640 bank(s)
+            Max                           : 2560 bank(s)
             High                          : 0 bank(s)
             Partial                       : 0 bank(s)
             Low                           : 0 bank(s)
             None                          : 0 bank(s)
     Temperature
-        GPU Current Temp                  : 40 C
-        GPU T.Limit Temp                  : N/A
-        GPU Shutdown Temp                 : 92 C
-        GPU Slowdown Temp                 : 89 C
-        GPU Max Operating Temp            : 85 C
+        GPU Current Temp                  : 34 C
+        GPU T.Limit Temp                  : 53 C
+        GPU Shutdown T.Limit Temp         : -8 C
+        GPU Slowdown T.Limit Temp         : -2 C
+        GPU Max Operating T.Limit Temp    : 0 C
         GPU Target Temperature            : N/A
-        Memory Current Temp               : 54 C
-        Memory Max Operating Temp         : 95 C
+        Memory Current Temp               : 40 C
+        Memory Max Operating T.Limit Temp : 0 C
     GPU Power Readings
-        Power Draw                        : 56.30 W
-        Current Power Limit               : 300.00 W
-        Requested Power Limit             : 300.00 W
-        Default Power Limit               : 300.00 W
-        Min Power Limit                   : 150.00 W
-        Max Power Limit                   : 300.00 W
+        Power Draw                        : 71.53 W
+        Current Power Limit               : 700.00 W
+        Requested Power Limit             : 700.00 W
+        Default Power Limit               : 700.00 W
+        Min Power Limit                   : 200.00 W
+        Max Power Limit                   : 700.00 W
     GPU Memory Power Readings 
-        Power Draw                        : N/A
+        Power Draw                        : 30.79 W
     Module Power Readings
         Power Draw                        : N/A
         Current Power Limit               : N/A
@@ -518,35 +518,35 @@ GPU 00000000:CA:00.0
         Min Power Limit                   : N/A
         Max Power Limit                   : N/A
     Clocks
-        Graphics                          : 210 MHz
-        SM                                : 210 MHz
-        Memory                            : 1512 MHz
-        Video                             : 795 MHz
+        Graphics                          : 345 MHz
+        SM                                : 345 MHz
+        Memory                            : 2619 MHz
+        Video                             : 765 MHz
     Applications Clocks
-        Graphics                          : 1410 MHz
-        Memory                            : 1512 MHz
+        Graphics                          : 1980 MHz
+        Memory                            : 2619 MHz
     Default Applications Clocks
-        Graphics                          : 1410 MHz
-        Memory                            : 1512 MHz
+        Graphics                          : 1980 MHz
+        Memory                            : 2619 MHz
     Deferred Clocks
         Memory                            : N/A
     Max Clocks
-        Graphics                          : 1410 MHz
-        SM                                : 1410 MHz
-        Memory                            : 1512 MHz
-        Video                             : 1290 MHz
+        Graphics                          : 1980 MHz
+        SM                                : 1980 MHz
+        Memory                            : 2619 MHz
+        Video                             : 1545 MHz
     Max Customer Boost Clocks
-        Graphics                          : 1410 MHz
+        Graphics                          : 1980 MHz
     Clock Policy
         Auto Boost                        : N/A
         Auto Boost Default                : N/A
     Voltage
-        Graphics                          : 687.500 mV
+        Graphics                          : 685.000 mV
     Fabric
-        State                             : N/A
-        Status                            : N/A
-        CliqueId                          : N/A
-        ClusterUUID                       : N/A
+        State                             : Completed
+        Status                            : Success
+        CliqueId                          : 0
+        ClusterUUID                       : 00000000-0000-0000-0000-000000000000
         Health
             Bandwidth                     : N/A
     Processes                             : None
